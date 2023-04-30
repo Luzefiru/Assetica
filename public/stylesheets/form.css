@@ -38,3 +38,27 @@
 .Form__button__submit:hover {
   background-color: var(--secondary-alt);
 }
+
+.Form__error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  color: var(--destructive);
+}
+
+.Form__error__heading {
+  font-size: 1.5lvw;
+}
+
+.Form__error svg {
+  width: 1.5lvw;
+  height: 1.5lvw;
+  color: var(--destructive);
+}
+
+.Form__error-list {
+  padding-left: 16px;
+  font-size: 1.15lvw;
+}

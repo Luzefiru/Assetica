@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const categoryController = require('../controllers/categoryController');
 
 // index page for /category
 router.get('/', (req, res) => {
@@ -10,8 +11,6 @@ router.get('/new', (req, res) => {
   res.render('form_category', { title: 'New Category' });
 });
 
-router.post('/new', (req, res) => {
-  console.log(req.body);
-});
+router.post('/new', categoryController.createCategory);
 
 module.exports = router;

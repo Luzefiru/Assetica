@@ -5,15 +5,17 @@
     <%- include('./includes/sidebar.ejs') -%>
     <main class="Main">
       <h1 class="Main__heading"><%= title %></h1>
-      <form class="Form" action="/" method="post">
+      <form class="Form" method="post">
         <div class="Form__field">
           <label class="Form__label" for="name">Category Name</label>
           <input
             class="Form__input"
             type="text"
             name="name"
-            placeholder="Book, Gadget, etc."
+            placeholder="Book,&nbsp;Gadget,&nbsp;etc."
             required
+            value="<%= (locals.name === undefined) ?
+          '' : name %>"
           />
         </div>
         <div class="Form__field">
@@ -23,14 +25,35 @@
             type="text"
             name="description"
             placeholder="A short description"
-            required
             rows="4"
+            value="<%= (locals.description === undefined) ? '' : description %>"
+            required
           ></textarea>
         </div>
 
         <button class="Form__button Form__button__submit" type="submit">
           Submit
         </button>
+
+        <% if (locals.errors) { %>
+        <div class="Form__error">
+          <h2 class="Form__error__heading">Errors</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <title>Errors</title>
+            <path
+              fill="currentColor"
+              d="M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z"
+            />
+          </svg>
+        </div>
+        <div class="Form__error-list">
+          <ul>
+            <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <% } %>
       </form>
     </main>
   </body>
