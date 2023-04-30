@@ -1,19 +1,20 @@
 const router = require('express').Router();
 const categoryController = require('../controllers/categoryController');
 
-// index page for /category
+// READ all categories
 router.get('/', (req, res) => {
   res.send('You are now in /category');
 });
-
-// page for a specific category :id
-router.get('/:id', categoryController.readCategory);
 
 // new category form page
 router.get('/new', (req, res) => {
   res.render('form_category', { title: 'New Category' });
 });
 
+// CREATE a single category
 router.post('/new', categoryController.createCategory);
+
+// READ a single category
+router.get('/:id', categoryController.readCategory);
 
 module.exports = router;
