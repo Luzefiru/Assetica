@@ -26,7 +26,18 @@ body {
   --secondary: #27e1c1;
   --secondary-alt: #0ea293;
   --tertiary: #f5f3c1;
-  --background: #f8f6fa;
-  --surface: #eae8e7;
+  --background: rgb(239, 235, 249);
+  --surface: #f8f6fa;
   --icon: #eae8e7;
+}
+
+.Main--wrapper {
+  align-self: center;
+  justify-self: center;
+  width: calc(100% - 48px);
+  height: calc(100% - 48px);
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  background-color: var(--surface);
 }
