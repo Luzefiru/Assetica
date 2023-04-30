@@ -1,6 +1,7 @@
 /* Modules */
 require('dotenv').config();
 const express = require('express');
+const { connect } = require('http2');
 const mongoose = require('mongoose');
 const path = require('path');
 
@@ -13,8 +14,18 @@ app.listen(port, host, () => {
 });
 
 /* Database Connection */
-mongoose.set('strictQuery', false);
-mongoose.connect(process.env.CONNECTION_STRING);
+const connectToDatabase = async () => {
+  try {
+    mongoose.set('strictQuery', false);
+    await mongoose.connect(process.env.CONNECTION_STRING);
+    console.log('Connected to database.');
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
+  }
+};
+
+connectToDatabase();
 
 /* Settings */
 app.set('views', path.join(__dirname, 'views'));

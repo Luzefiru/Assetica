@@ -6,6 +6,9 @@ router.get('/', (req, res) => {
   res.send('You are now in /category');
 });
 
+// page for a specific category :id
+router.get('/:id', categoryController.readCategory);
+
 // new category form page
 router.get('/new', (req, res) => {
   res.render('form_category', { title: 'New Category' });

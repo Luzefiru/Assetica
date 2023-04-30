@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./includes/head.ejs', {title}) -%>
+  <body>
+    <%- include('./includes/sidebar.ejs') -%>
+    <main class="Main">
+      <h1 class="Main__heading"><%= title %></h1>
+      <p class="Category__description"><%= description %></p>
+      <a href="/category">Back to All Categories?</a>
+    </main>
+  </body>
+</html>
