@@ -1,0 +1,40 @@
+.Form__field {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 16px;
+  gap: 4px;
+}
+
+.Form__label {
+  text-transform: uppercase;
+  font-size: 0.9lvw;
+  font-weight: 600;
+  color: var(--subtext);
+}
+
+.Form__input,
+.Form__textarea {
+  font-size: 1.2lvw;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1.5px solid var(--form-outline);
+}
+
+.Form__textarea {
+  font-family: inherit;
+}
+
+.Form__button__submit {
+  all: unset;
+  background-color: var(--secondary);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.2lvw;
+  padding: 12px 32px;
+  cursor: pointer;
+}
+
+.Form__button__submit:hover {
+  background-color: var(--secondary-alt);
+}
