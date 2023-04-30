@@ -1,5 +1,7 @@
 # odin-inventory-app
 
+<img src="./public/cover.png" />
+
 A MongoDB inventory database application served with an Express.js REST API.
 
 ## Database Schema

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: grid;
+  background-color: var(--background);
+  grid-template-columns: 72px auto; /* sidebar main */
+}
+
+:root {
+  --primary: #2f0f5d;
+  --sidebar-hover: #766491;
+  --secondary: #27e1c1;
+  --secondary-alt: #0ea293;
+  --tertiary: #f5f3c1;
+  --background: #f3f0f7;
+  --surface: #eae8e7;
+  --icon: #eae8e7;
+}
