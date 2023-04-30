@@ -12,21 +12,17 @@ This schema was made with [QuickDBD](https://www.quickdatabasediagrams.com/) for
 
 <img src="./docs/diagram-schema.svg" width="100%" height="300px" />
 
-```
-Item
--
-_id PK Schema.Types.ObjectID
-name String
-description String
-category [Schema.Types.ObjectID] FK >-< Category._id
-price Number
-in_stock Number
-URL String
+```js
+const ItemSchema = new Schema({
+  name: { type: String, required: true, trim: true },
+  description: { type: String, required: true, trim: true },
+  category: [{ type: Schema.Types.ObjectId, ref: 'Category', required: true }],
+  price: { type: Number, required: true },
+  in_stock: { type: Number, required: true, min: 0, default: 0 },
+});
 
-Category
--
-_id PK Schema.Types.ObjectID
-name String
-description String
-URL String
+const CategorySchema = new Schema({
+  name: { type: String, required: true, trim: true },
+  description: { type: String, required: true, trim: true },
+});
 ```
