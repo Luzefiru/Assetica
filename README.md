@@ -21,8 +21,16 @@ const ItemSchema = new Schema({
   in_stock: { type: Number, required: true, min: 0, default: 0 },
 });
 
+ItemSchema.virtual('URL').get(function () {
+  return `/item/${this._id}`;
+});
+
 const CategorySchema = new Schema({
   name: { type: String, required: true, trim: true },
   description: { type: String, required: true, trim: true },
+});
+
+CategorySchema.virtual('URL').get(function () {
+  return `/category/${this._id}`;
 });
 ```
