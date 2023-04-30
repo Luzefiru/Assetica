@@ -6,7 +6,7 @@ A MongoDB inventory database application served with an Express.js REST API.
 
 This schema was made with [QuickDBD](https://www.quickdatabasediagrams.com/) for visualizing the relationships between the Mongoose Models.
 
-- a `category` array field can have **1 or many** `Category` objects.
+- an `Item`'s `category` array field can have **1 or many** `Category` objects.
 - a single `Category` object can belong to **0 or many** `Item` objects at any time.
 - `URL` Strings are [Mongoose Virtuals](https://mongoosejs.com/docs/tutorials/virtuals.html) that are based on the base route URL and the `Schema.Types.ObjectId`.
 
