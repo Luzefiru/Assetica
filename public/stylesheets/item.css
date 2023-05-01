@@ -82,7 +82,8 @@
   color: var(--positive);
 }
 
-.Item__card__details__view-btn {
+.Item__card__details__view-btn,
+.Button {
   all: unset;
   border: 1.5px solid var(--primary);
   color: var(--primary);
@@ -97,7 +98,21 @@
   cursor: pointer;
 }
 
-.Item__card__details__view-btn:hover {
+.Item__card__details__view-btn:hover,
+.Button:hover {
   background-color: var(--primary);
   color: var(--surface);
+}
+
+.Button {
+  margin-bottom: 24px;
+}
+
+.Button--delete {
+  color: var(--destructive);
+  border-color: var(--destructive);
+}
+
+.Button--delete:hover {
+  background-color: var(--destructive);
 }
