@@ -1,8 +1,8 @@
-# odin-inventory-app
+# Assetica
 
 <img src="./public/cover.png" />
 
-A MongoDB inventory database application served with an Express.js REST API.
+A cloud-based inventory management web application for the modern consumer. Powered by an Express.js REST API web server hosted on [Render.com](https://render.com/) that fetches data from a NoSQL [MongoDB](https://www.mongodb.com/) database cluster.
 
 ## Database Schema
 
@@ -18,7 +18,7 @@ This schema was made with [QuickDBD](https://www.quickdatabasediagrams.com/) for
 const ItemSchema = new Schema({
   name: { type: String, required: true, trim: true },
   description: { type: String, required: true, trim: true },
-  category: [{ type: Schema.Types.ObjectId, ref: 'Category', required: true }],
+  category: { type: Schema.Types.ObjectId, ref: 'Category', required: true },
   price: { type: Number, required: true },
   in_stock: { type: Number, required: true, min: 0, default: 0 },
 });
@@ -36,3 +36,8 @@ CategorySchema.virtual('URL').get(function () {
   return `/category/${this._id}`;
 });
 ```
+
+## Mockups
+
+<img src="./docs/assetica-mockup.png" />
+<img src="./docs/assetica-showcase.png" />
