@@ -18,6 +18,7 @@ body {
   display: grid;
   background-color: var(--background);
   grid-template-columns: 72px auto; /* sidebar main */
+  padding-bottom: 48px;
 }
 
 :root {
@@ -42,10 +43,11 @@ body {
   align-self: center;
   justify-self: center;
   width: calc(100% - 48px);
-  height: calc(100% - 48px);
+  height: 100%;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   padding: 24px;
+  margin-top: 48px;
   background-color: var(--surface);
 }
 
