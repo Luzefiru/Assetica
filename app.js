@@ -6,10 +6,9 @@ const path = require('path');
 
 /* Initialization */
 const app = express();
-const port = 3000,
-  host = 'localhost';
-app.listen(port, host, () => {
-  console.log(`Serving in http://${host}:${port}`);
+const port = 10000;
+app.listen(port, () => {
+  console.log(`Serving on port ${port}`);
 });
 
 /* Database Connection */
