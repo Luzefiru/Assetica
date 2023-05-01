@@ -49,7 +49,7 @@ module.exports.postForm = [
         errors: errors.array(),
         availableCategories,
       });
-    } else if (req.body._id !== undefined) {
+    } else if (req.body._id !== '') {
       // if there's an ID, that means we are updating an existing item
       // find a document via the URL's item :id, then update it
       const updatedItem = await Item.findByIdAndUpdate(

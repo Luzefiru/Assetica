@@ -31,7 +31,7 @@ module.exports.postCategory = [
         description: req.body.description,
         errors: errors.array(),
       });
-    } else if (req.body._id !== undefined) {
+    } else if (req.body._id !== '') {
       // if there's an ID, that means we are updating an existing category
       // find a document via the URL's category :id, then update its name & description
       const updatedCategory = await Category.findByIdAndUpdate(
