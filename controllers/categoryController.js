@@ -36,7 +36,6 @@ module.exports.createCategory = [
 
     // save the document
     await newCategoryDocument.save();
-    console.log('SAVED');
     res.redirect(newCategoryDocument.URL);
   }),
 ];

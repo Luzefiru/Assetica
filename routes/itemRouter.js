@@ -7,9 +7,7 @@ router.get('/', (req, res) => {
 });
 
 // new item form page
-router.get('/new', (req, res) => {
-  res.render('form_item', { title: 'New Item' });
-});
+router.get('/new', itemController.getItemForm);
 
 // CREATE a single item
 router.post('/new', itemController.createItem);

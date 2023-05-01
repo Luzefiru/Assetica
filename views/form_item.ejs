@@ -26,18 +26,29 @@
             name="description"
             placeholder="A short description"
             rows="4"
-            value="<%= (locals.description === undefined) ? '' : description %>"
             required
-          ></textarea>
+          >
+<%= (locals.description === undefined) ? '' : description %></textarea
+          >
         </div>
 
         <div class="Form__field">
-          <label class="Form__label" for="price">Price</label>
+          <label class="Form__label" for="category">Category</label>
+          <select name="category" class="Form__input" required>
+            <% availableCategories.forEach(category => { %>
+            <option value="<%= category._id %>"><%= category.name %></option>
+            <% }) %>
+          </select>
+        </div>
+
+        <div class="Form__field">
+          <label class="Form__label" for="price">Price ($)</label>
           <input
             class="Form__input"
             type="number"
+            step="0.01"
             name="price"
-            placeholder="420"
+            placeholder="19.84"
             required
             value="<%= (locals.price === undefined) ?
           '' : price %>"

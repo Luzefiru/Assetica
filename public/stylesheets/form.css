@@ -19,6 +19,7 @@
   padding: 8px;
   border-radius: 8px;
   border: 1.5px solid var(--form-outline);
+  position: relative;
 }
 
 .Form__textarea {
