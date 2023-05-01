@@ -2,6 +2,12 @@ const Category = require('../models/Category');
 const { body, validationResult } = require('express-validator');
 const asyncHandler = require('express-async-handler');
 
+module.exports.getIndex = asyncHandler(async (req, res) => {
+  const categories = await Category.find().exec();
+  console.log(categories);
+  res.render('index_category', { title: 'All Categories', categories });
+});
+
 module.exports.createCategory = [
   // validate & sanitize the req.body.name
   body('name', 'Genre name must not be empty.')

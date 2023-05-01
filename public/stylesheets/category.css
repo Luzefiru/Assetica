@@ -1,0 +1,20 @@
+.Categories {
+  display: flex;
+  gap: 8px;
+  width: 60%;
+}
+
+.Main__heading--item__category {
+  background-color: var(--secondary-bg);
+  color: var(--secondary-alt);
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 80ms all ease-in;
+}
+
+.Main__heading--item__category:hover {
+  transform: scale(1.025);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}

@@ -2,9 +2,7 @@ const router = require('express').Router();
 const itemController = require('../controllers/itemController');
 
 // READ all items
-router.get('/', (req, res) => {
-  res.send('You are now in /item');
-});
+router.get('/', itemController.getIndex);
 
 // new item form page
 router.get('/new', itemController.getItemForm);

@@ -6,7 +6,8 @@
     <main class="Main">
       <div class="Main__heading--item">
         <h1 class="Main__heading--item__title"><%= title %></h1>
-        <div class="Main__heading--item__category"><%= category[0].name %></div>
+        <%- include('./includes/category.ejs', {category: category[0].name, URL:
+        category[0].URL}) -%>
       </div>
       <p class="Description"><%= description %></p>
       <p class="Price">$ <%= price %></p>

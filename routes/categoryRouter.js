@@ -2,9 +2,7 @@ const router = require('express').Router();
 const categoryController = require('../controllers/categoryController');
 
 // READ all categories
-router.get('/', (req, res) => {
-  res.send('You are now in /category');
-});
+router.get('/', categoryController.getIndex);
 
 // new category form page
 router.get('/new', (req, res) => {
