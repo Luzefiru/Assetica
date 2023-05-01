@@ -61,5 +61,14 @@ module.exports.getDetail = asyncHandler(async (req, res, next) => {
     title: category.name,
     name: category.name,
     description: category.description,
+    URL: category.URL,
   });
+});
+
+exports.deleteCategory = asyncHandler(async (req, res, next) => {
+  const idToDelete = req.params.id;
+
+  await Category.deleteOne({ _id: idToDelete }).exec();
+  console.log('Successfully deleted Category:', idToDelete);
+  res.redirect('/category');
 });

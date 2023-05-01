@@ -15,4 +15,7 @@ router.post('/new', categoryController.postCategory);
 // READ a single category
 router.get('/:id', categoryController.getDetail);
 
+// DELETE a single category
+router.post('/:id/delete', categoryController.deleteCategory);
+
 module.exports = router;
