@@ -1,7 +1,7 @@
 <div class="Item__card">
   <img
     class="Item__card__img"
-    src="https://picsum.photos/seed/picsum/200/300"
+    src="https://picsum.photos/seed/<%= Math.floor(Math.random() * 100) -%>/300/300"
   />
   <div class="Item__card__details">
     <%- include('./category', {category: item.category[0].name, URL:
