@@ -47,12 +47,28 @@ body {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   padding: 24px;
   background-color: var(--surface);
-  margin: 24px 0;
+}
+
+.Main__heading--wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.Main__heading--wrapper svg {
+  width: 2.5lvw;
+  height: 2.5lvw;
+  color: var(--primary);
+  margin-bottom: 24px;
+}
+
+.Main__heading--wrapper svg:hover {
+  color: var(--secondary-alt);
 }
 
 .Main__heading {
-  color: var(--primary);
   font-size: 2.5lvw;
+  color: var(--primary);
   margin-bottom: 24px;
 }
 

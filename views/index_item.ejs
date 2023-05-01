@@ -4,7 +4,17 @@
   <body>
     <%- include('./includes/sidebar.ejs') -%>
     <main class="Main">
-      <h1 class="Main__heading"><%= title %></h1>
+      <div class="Main__heading--wrapper">
+        <h1 class="Main__heading"><%= title %></h1>
+        <a href="/item/new"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20">
+            <title>Create Item</title>
+            <path
+              fill="currentColor"
+              d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+            /></svg
+        ></a>
+      </div>
       <div class="Item">
         <% items.forEach(item => { %> <%- include('./includes/card_item.ejs',
         {item}) -%> <% }); %>
