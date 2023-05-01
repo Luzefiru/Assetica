@@ -13,4 +13,7 @@ router.post('/new', itemController.postForm);
 // READ a single item
 router.get('/:id', itemController.getDetail);
 
+// DELETE a single item
+router.post('/:id/delete', itemController.deleteItem);
+
 module.exports = router;

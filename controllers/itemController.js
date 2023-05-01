@@ -91,3 +91,11 @@ module.exports.getDetail = asyncHandler(async (req, res, next) => {
     URL: item.URL,
   });
 });
+
+exports.deleteItem = asyncHandler(async (req, res, next) => {
+  const idToDelete = req.params.id;
+
+  await Item.deleteOne({ _id: idToDelete }).exec();
+  console.log('Successfully deleted Item:', idToDelete);
+  res.redirect('/item');
+});
