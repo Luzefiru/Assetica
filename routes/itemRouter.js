@@ -1,8 +1,20 @@
 const router = require('express').Router();
+const itemController = require('../controllers/itemController');
 
-// index page for /category
+// READ all items
 router.get('/', (req, res) => {
   res.send('You are now in /item');
 });
+
+// new item form page
+router.get('/new', (req, res) => {
+  res.render('form_item', { title: 'New Item' });
+});
+
+// CREATE a single item
+router.post('/new', itemController.createItem);
+
+// READ a single item
+router.get('/:id', itemController.readItem);
 
 module.exports = router;
