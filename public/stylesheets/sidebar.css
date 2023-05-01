@@ -6,6 +6,9 @@
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
   padding: 16px 0;
   gap: 8px;
+  height: 100lvh;
+  width: 72px;
+  position: fixed;
 }
 
 .Sidebar__logo {

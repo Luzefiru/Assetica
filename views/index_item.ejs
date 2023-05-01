@@ -5,6 +5,10 @@
     <%- include('./includes/sidebar.ejs') -%>
     <main class="Main">
       <h1 class="Main__heading"><%= title %></h1>
+      <div class="Item">
+        <% items.forEach(item => { %> <%- include('./includes/card_item.ejs',
+        {item}) -%> <% }); %>
+      </div>
     </main>
   </body>
 </html>

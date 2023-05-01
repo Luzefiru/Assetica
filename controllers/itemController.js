@@ -5,7 +5,6 @@ const asyncHandler = require('express-async-handler');
 
 module.exports.getIndex = asyncHandler(async (req, res) => {
   const items = await Item.find().populate('category').exec();
-  console.log(items);
   res.render('index_item', { title: 'All Items', items });
 });
 

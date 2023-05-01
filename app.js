@@ -1,7 +1,6 @@
 /* Modules */
 require('dotenv').config();
 const express = require('express');
-const { connect } = require('http2');
 const mongoose = require('mongoose');
 const path = require('path');
 

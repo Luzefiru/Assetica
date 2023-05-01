@@ -1,0 +1,25 @@
+<div class="Item__card">
+  <img
+    class="Item__card__img"
+    src="https://picsum.photos/seed/picsum/200/300"
+  />
+  <div class="Item__card__details">
+    <%- include('./category', {category: item.category[0].name, URL:
+    item.category[0].URL }) -%>
+    <h3 class="Item__card__details__heading"><%= item.name %></h3>
+    <p class="Item__card__details__description">
+      <%= item.description.split('.')[0] + '.' %>
+    </p>
+    <div class="Item__card__details__price-stock-wrapper">
+      <p class="Item__card__details__price">$<%= item.price %></p>
+      <p class="Item__card__details__stock"><%= item.in_stock %> available</p>
+    </div>
+
+    <a
+      href="<%= item.URL %>"
+      class="Item__card__details__view-btn"
+      type="button"
+      >View</a
+    >
+  </div>
+</div>

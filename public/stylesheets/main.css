@@ -29,11 +29,13 @@ body {
   --tertiary: #f5f3c1;
   --background: rgb(239, 235, 249);
   --surface: #f8f6fa;
+  --white: #fdfbff;
   --icon: #eae8e7;
   --text: #06010c;
   --subtext: rgb(85, 85, 85);
   --form-outline: rgb(205, 205, 206);
   --destructive: #c30528;
+  --positive: #19b953;
 }
 
 .Main {
@@ -45,6 +47,7 @@ body {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   padding: 24px;
   background-color: var(--surface);
+  margin: 24px 0;
 }
 
 .Main__heading {
