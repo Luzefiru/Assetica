@@ -31,18 +31,18 @@ module.exports.postCategory = [
         description: req.body.description,
         errors: errors.array(),
       });
+    } else {
+      // create a MongoDB document inside collection 'Category' with these fields
+      const [name, description] = [req.body.name, req.body.description];
+      const newCategoryDocument = new Category({
+        name,
+        description,
+      });
+
+      // save the document
+      await newCategoryDocument.save();
+      res.redirect(newCategoryDocument.URL);
     }
-
-    // create a MongoDB document inside collection 'Category' with these fields
-    const [name, description] = [req.body.name, req.body.description];
-    const newCategoryDocument = new Category({
-      name,
-      description,
-    });
-
-    // save the document
-    await newCategoryDocument.save();
-    res.redirect(newCategoryDocument.URL);
   }),
 ];
 

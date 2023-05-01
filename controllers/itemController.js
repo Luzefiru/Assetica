@@ -50,24 +50,26 @@ module.exports.postForm = [
         errors: errors.array(),
         availableCategories,
       });
-    }
+    } else {
+      const [name, description, category, price, in_stock] = [
+        req.body.name,
+        req.body.description,
+        req.body.category,
+        req.body.price,
+        req.body.in_stock,
+      ];
 
-    const [name, description, category, price, in_stock] = [
-      req.body.name,
-      req.body.description,
-      req.body.category,
-      req.body.price,
-      req.body.in_stock,
-    ];
-    const newItem = new Item({
-      name,
-      description,
-      category: [category],
-      price,
-      in_stock,
-    });
-    await newItem.save();
-    res.redirect(newItem.URL);
+      const newItem = new Item({
+        name,
+        description,
+        category: [category],
+        price,
+        in_stock,
+      });
+
+      await newItem.save();
+      res.redirect(newItem.URL);
+    }
   }),
 ];
 
