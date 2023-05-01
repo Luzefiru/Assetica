@@ -31,7 +31,17 @@ module.exports.postCategory = [
         description: req.body.description,
         errors: errors.array(),
       });
+    } else if (req.body._id !== undefined) {
+      // if there's an ID, that means we are updating an existing category
+      // find a document via the URL's category :id, then update its name & description
+      const updatedCategory = await Category.findByIdAndUpdate(
+        { _id: req.body._id },
+        { name: req.body.name, description: req.body.description }
+      );
+      // redirect to the updated category page
+      res.redirect(updatedCategory.URL);
     } else {
+      // otherwise, it's a new document
       // create a MongoDB document inside collection 'Category' with these fields
       const [name, description] = [req.body.name, req.body.description];
       const newCategoryDocument = new Category({
@@ -71,4 +81,17 @@ exports.deleteCategory = asyncHandler(async (req, res, next) => {
   await Category.deleteOne({ _id: idToDelete }).exec();
   console.log('Successfully deleted Category:', idToDelete);
   res.redirect('/category');
+});
+
+exports.updateCategory = asyncHandler(async (req, res, next) => {
+  const idToUpdate = req.params.id;
+
+  const category = await Category.findById(idToUpdate);
+  console.log(category);
+  res.render('form_category', {
+    title: 'Edit Category',
+    name: category.name,
+    description: category.description,
+    _id: category._id,
+  });
 });

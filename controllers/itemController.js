@@ -49,6 +49,21 @@ module.exports.postForm = [
         errors: errors.array(),
         availableCategories,
       });
+    } else if (req.body._id !== undefined) {
+      // if there's an ID, that means we are updating an existing item
+      // find a document via the URL's item :id, then update it
+      const updatedItem = await Item.findByIdAndUpdate(
+        { _id: req.body._id },
+        {
+          name: req.body.name,
+          description: req.body.description,
+          category: req.body.category,
+          price: req.body.price,
+          in_stock: req.body.in_stock,
+        }
+      );
+      // redirect to the updated item page
+      res.redirect(updatedItem.URL);
     } else {
       const [name, description, category, price, in_stock] = [
         req.body.name,
@@ -98,4 +113,22 @@ exports.deleteItem = asyncHandler(async (req, res, next) => {
   await Item.deleteOne({ _id: idToDelete }).exec();
   console.log('Successfully deleted Item:', idToDelete);
   res.redirect('/item');
+});
+
+exports.updateItem = asyncHandler(async (req, res, next) => {
+  const availableCategories = await Category.find().exec();
+  const idToUpdate = req.params.id;
+
+  const item = await Item.findById(idToUpdate);
+  res.render('form_item', {
+    title: 'Edit Item',
+    name: item.name,
+    description: item.description,
+    category: item.category,
+    price: item.price,
+    in_stock: item.in_stock,
+    URL: item.URL,
+    _id: item._id,
+    availableCategories,
+  });
 });

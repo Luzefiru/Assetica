@@ -6,9 +6,14 @@
     <main class="Main">
       <h1 class="Main__heading"><%= title %></h1>
       <p class="Description"><%= description %></p>
-      <form method="post" action="<%= `${URL}/delete` %>">
-        <button class="Button Button--delete" type="submit">Delete</button>
-      </form>
+      <div class="Buttons-wrapper">
+        <form method="post" action="<%= `${URL}/delete` %>">
+          <button class="Button Button--delete" type="submit">Delete</button>
+        </form>
+        <form method="get" action="<%= `${URL}/update` %>">
+          <button class="Button" type="submit">Edit</button>
+        </form>
+      </div>
       <a class="Back" href="/category"
         ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <title>Back</title>

@@ -5,7 +5,12 @@
     <%- include('./includes/sidebar.ejs') -%>
     <main class="Main">
       <h1 class="Main__heading"><%= title %></h1>
-      <form class="Form" method="post">
+      <form class="Form" action="/item/new" method="post">
+        <input
+          type="hidden"
+          name="_id"
+          value="<%= (locals._id === undefined) ? undefined : _id %>"
+        />
         <div class="Form__field">
           <label class="Form__label" for="name">Item Name</label>
           <input

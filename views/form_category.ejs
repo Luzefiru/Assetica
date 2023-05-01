@@ -5,7 +5,12 @@
     <%- include('./includes/sidebar.ejs') -%>
     <main class="Main">
       <h1 class="Main__heading"><%= title %></h1>
-      <form class="Form" method="post">
+      <form class="Form" action="/category/new" method="post">
+        <input
+          type="hidden"
+          name="_id"
+          value="<%= (locals._id === undefined) ? undefined : _id %>"
+        />
         <div class="Form__field">
           <label class="Form__label" for="name">Category Name</label>
           <input
@@ -26,9 +31,10 @@
             name="description"
             placeholder="A short description"
             rows="4"
-            value="<%= (locals.description === undefined) ? '' : description %>"
             required
-          ></textarea>
+          >
+<%= (locals.description === undefined) ? '' : description %></textarea
+          >
         </div>
 
         <button class="Form__button Form__button__submit" type="submit">

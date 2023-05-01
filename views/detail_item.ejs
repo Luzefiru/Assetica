@@ -12,9 +12,15 @@
       <p class="Description"><%= description %></p>
       <p class="Price">$ <%= price %></p>
       <p class="Stock"><%= in_stock %> in stock</p>
-      <form method="post" action="<%= `${URL}/delete` %>">
-        <button class="Button Button--delete" type="submit">Delete</button>
-      </form>
+      <div class="Buttons-wrapper">
+        <form method="post" action="<%= `${URL}/delete` %>">
+          <button class="Button Button--delete" type="submit">Delete</button>
+        </form>
+        <form method="get" action="<%= `${URL}/update` %>">
+          <button class="Button" type="submit">Edit</button>
+        </form>
+      </div>
+
       <a class="Back" href="/item"
         ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <title>Back</title>

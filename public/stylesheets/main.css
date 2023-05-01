@@ -99,3 +99,8 @@ body {
   text-decoration: none;
   font-weight: 500;
 }
+
+.Buttons-wrapper {
+  display: flex;
+  gap: 16px;
+}
