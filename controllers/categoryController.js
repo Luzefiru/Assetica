@@ -8,7 +8,7 @@ module.exports.getIndex = asyncHandler(async (req, res) => {
   res.render('index_category', { title: 'All Categories', categories });
 });
 
-module.exports.createCategory = [
+module.exports.postCategory = [
   // validate & sanitize the req.body.name
   body('name', 'Genre name must not be empty.')
     .trim()
@@ -46,7 +46,7 @@ module.exports.createCategory = [
   }),
 ];
 
-module.exports.readCategory = asyncHandler(async (req, res, next) => {
+module.exports.getDetail = asyncHandler(async (req, res, next) => {
   const category = await Category.findById(req.params.id).exec();
 
   // if the category with the associated URL :id is not found, throw an error

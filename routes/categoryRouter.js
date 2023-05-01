@@ -10,9 +10,9 @@ router.get('/new', (req, res) => {
 });
 
 // CREATE a single category
-router.post('/new', categoryController.createCategory);
+router.post('/new', categoryController.postCategory);
 
 // READ a single category
-router.get('/:id', categoryController.readCategory);
+router.get('/:id', categoryController.getDetail);
 
 module.exports = router;

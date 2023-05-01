@@ -5,12 +5,12 @@ const itemController = require('../controllers/itemController');
 router.get('/', itemController.getIndex);
 
 // new item form page
-router.get('/new', itemController.getItemForm);
+router.get('/new', itemController.getForm);
 
 // CREATE a single item
-router.post('/new', itemController.createItem);
+router.post('/new', itemController.postForm);
 
 // READ a single item
-router.get('/:id', itemController.readItem);
+router.get('/:id', itemController.getDetail);
 
 module.exports = router;

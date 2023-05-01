@@ -9,7 +9,7 @@ module.exports.getIndex = asyncHandler(async (req, res) => {
   res.render('index_item', { title: 'All Items', items });
 });
 
-module.exports.getItemForm = asyncHandler(async (req, res) => {
+module.exports.getForm = asyncHandler(async (req, res) => {
   const availableCategories = await Category.find().exec();
   res.render('form_item', {
     title: 'New Item',
@@ -17,7 +17,7 @@ module.exports.getItemForm = asyncHandler(async (req, res) => {
   });
 });
 
-module.exports.createItem = [
+module.exports.postForm = [
   body('name', 'Item name must not be empty.')
     .trim()
     .isLength({ min: 1 })
@@ -71,7 +71,7 @@ module.exports.createItem = [
   }),
 ];
 
-module.exports.readItem = asyncHandler(async (req, res, next) => {
+module.exports.getDetail = asyncHandler(async (req, res, next) => {
   const item = await Item.findById(req.params.id).populate('category').exec();
 
   if (item === null) {
