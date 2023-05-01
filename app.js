@@ -40,5 +40,10 @@ app.use('/item', require('./routes/itemRouter'));
 app.use('/category', require('./routes/categoryRouter'));
 
 app.get('/', (req, res) => {
-  res.send(process.env.CONNECTION_STRING);
+  res.render('index');
+});
+
+/* catcher for invalid URLs */
+app.use((req, res) => {
+  res.send('ERROR: 404 Page not found.');
 });

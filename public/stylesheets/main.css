@@ -21,6 +21,11 @@ body {
   padding-bottom: 48px;
 }
 
+.body--full-screen {
+  display: block;
+  padding-bottom: 0;
+}
+
 :root {
   --primary: #2f0f5d;
   --sidebar-hover: #766491;
