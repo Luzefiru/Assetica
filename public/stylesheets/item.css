@@ -1,0 +1,26 @@
+.Main__heading--item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 24px;
+}
+
+.Main__heading--item__title {
+  color: var(--primary);
+  font-size: 2.5lvw;
+}
+
+.Main__heading--item__category {
+  background-color: var(--secondary-bg);
+  color: var(--secondary-alt);
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+}
+
+.Price,
+.Stock {
+  color: var(--subtext);
+  font-size: 1.25lvw;
+  font-weight: 500;
+}

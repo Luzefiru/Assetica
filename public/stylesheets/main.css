@@ -25,6 +25,7 @@ body {
   --sidebar-hover: #766491;
   --secondary: #27e1c1;
   --secondary-alt: #0ea293;
+  --secondary-bg: #98eddf;
   --tertiary: #f5f3c1;
   --background: rgb(239, 235, 249);
   --surface: #f8f6fa;
@@ -52,6 +53,17 @@ body {
   margin-bottom: 24px;
 }
 
-.Description {
+.Description,
+.Stock {
   margin-bottom: 24px;
+}
+
+.Price {
+  margin-bottom: 8px;
+}
+
+.Description {
+  font-size: 1.2lvw;
+  width: 60%;
+  line-height: 1.5;
 }

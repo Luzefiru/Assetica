@@ -34,7 +34,6 @@ module.exports.createItem = [
 
     if (!errors.isEmpty()) {
       const availableCategories = await Category.find().exec();
-      console.log(req.body);
       res.render('form_item', {
         title: 'New Item',
         name: req.body.name,
@@ -47,13 +46,20 @@ module.exports.createItem = [
       });
     }
 
-    const [name, description, price, in_stock] = [
+    const [name, description, category, price, in_stock] = [
       req.body.name,
       req.body.description,
+      req.body.category,
       req.body.price,
       req.body.in_stock,
     ];
-    const newItem = new Item({ name, description, price, in_stock });
+    const newItem = new Item({
+      name,
+      description,
+      category: [category],
+      price,
+      in_stock,
+    });
     await newItem.save();
     res.redirect(newItem.URL);
   }),

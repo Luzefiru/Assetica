@@ -4,8 +4,13 @@
   <body>
     <%- include('./includes/sidebar.ejs') -%>
     <main class="Main">
-      <h1 class="Main__heading"><%= title %></h1>
+      <div class="Main__heading--item">
+        <h1 class="Main__heading--item__title"><%= title %></h1>
+        <div class="Main__heading--item__category"><%= category[0].name %></div>
+      </div>
       <p class="Description"><%= description %></p>
+      <p class="Price">$ <%= price %></p>
+      <p class="Stock"><%= in_stock %> in stock</p>
       <a href="/item">Back to All Items?</a>
     </main>
   </body>
