@@ -2,7 +2,7 @@
 
 <img src="./public/cover.png" />
 
-A cloud-based inventory management web application for the modern consumer. Powered by an Express.js REST API web servvi hosted on [Render.com](https://render.com/) that fetches data from a NoSQL [MongoDB](https://www.mongodb.com/) database cluster and performs HTML server-side rendering with EJS.
+A cloud-based inventory management web application for the modern consumer. Powered by an Express.js REST API web service hosted on [Render.com](https://render.com/) that fetches data from a NoSQL [MongoDB](https://www.mongodb.com/) database cluster and performs HTML server-side rendering with EJS.
 
 ## Database Schema
 
